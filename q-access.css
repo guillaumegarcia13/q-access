@@ -1,0 +1,98 @@
+/* CSS declarations go here */
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+html, body {
+    height: 100%;
+}
+header {
+    margin: 0;
+    padding: 20px;
+    height: 60px;
+    background: white;
+    /*border-bottom: 2px solid #999;*/
+}
+button {
+    cursor: pointer;
+}
+.title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+.subtitle {
+    font-family: 'PT Sans', sans-slerif;
+    font-size: 24px;
+}
+.userWelcome {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 30px;
+    font-family: 'PT Sans', sans-slerif;
+    font-size: 20px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 120px);
+}
+.userDetails {
+    padding: 40px;
+    font-size: 24px;
+    background: rgba(255,255,255,0.6);
+    border: 0;
+    border-radius: 10px;
+}
+.userDetails label {
+    display: inline-block;
+    width: 160px;
+}
+.btnRemove {
+    margin-top: 10px;
+    padding: 10px;
+    background: #55A5C8;
+    color: white;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 4px;
+    transition: all 450ms ease;
+}
+.btnRemove:hover {
+    background: #328FBA;
+}
+.btnHistory {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 12px;
+    margin: 20px;
+    color: white;
+    font-size: 20px;
+    background: #55A5C8;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 450ms ease;
+}
+.btnHistory:hover {
+    background: #328FBA;
+}
+.btnLaunch {
+    padding: 40px;
+    font-size: 28px;
+    background: rgba(255,255,255,0.6);
+    border: 0;
+    border-radius: 10px;
+    color: #666;
+    animation: colorWave 1.5s ease infinite alternate;
+}
+.btnLaunch:hover {
+    color: black;
+    /*transition: all 1s ease both;*/
+}
+@keyframes colorWave {
+  from { color: #666;  }
+  to   { color: black; }
+}
+    

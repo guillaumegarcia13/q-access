@@ -1,0 +1,53 @@
+<head>
+  <title>q-access</title>
+  <base href="/">
+</head>
+
+<body ng-controller="QAccessCtrl">
+  
+  <header>
+    <span class="title">Q-Access</span
+    ><span class="subtitle">, a simple online tool to queue access to shared resource</span>
+    
+    <!-- https://github.com/themeteorchef/roll-your-own-authentication -->
+    <!-- Does NOT work for the moment due to the http://0.0.0.0:8080 address which cannot be used for Google OAuth 
+    <login-buttons>
+    </login-buttons> -->
+    
+    <span ng-show="cookies.userId"
+          ng-bind-template="Welcome, {{cookies.userId}}!"
+          class="userWelcome"></span>
+  </header>
+  
+  <nav>
+    <div ng-show="!authenticated">
+    </div>
+    
+    <div ng-show="authenticated">
+      <div class="userDetails" ng-repeat="learner in learners">
+        <div>
+          <label>Current user is: </label>
+          <strong ng-bind="learner.id"></strong>
+        </div>
+        <div>
+          <label>Since: </label>
+          <!-- <em am-time-ago="learner.launchedAt"></em> -->
+          <em ng-bind="timeAgo(learner.launchedAt)"></em>
+        </div>
+        <button class="btnRemove"
+                ng-click="removeLearner()">
+          Remove
+        </button>
+      </div>
+    
+      <button class="btnLaunch"
+              ng-click="launchResource()"
+              ng-show="!learners || learners.length == 0">
+        Access Learning Hub
+      </button>
+      
+      <i class="fa fa-history btnHistory" ng-click="showHistory()" title="History"></i>
+    </div>
+  </nav>
+  
+</body>
